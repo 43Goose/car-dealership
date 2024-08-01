@@ -1,0 +1,15 @@
+.box-open {
+    transition: border-radius 100ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.box-closed {
+    transition: border-radius 100ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
+}
+
+@media (prefers-reduced-motion) {
+
+    .box-open,
+    .box-closed {
+        transition: none;
+    }
+}
