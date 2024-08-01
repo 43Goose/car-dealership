@@ -95,7 +95,8 @@ function SliderFilter({ title, min, max, setFilter }: { title: string; min: numb
 
     const handleSliderChange = (event: Event, newValue: number | number[]) => {
         const valArr = newValue as number[];
-        setvalue(newValue as number[]);
+        setNumValues([getNumFromSlider(valArr[0]), getNumFromSlider(valArr[1])]);
+        setvalue(valArr);
         setFilter({ type: 'slider', category: title, value: { min: getNumFromSlider(valArr[0]), max: getNumFromSlider(valArr[1]) } });
     }
 
