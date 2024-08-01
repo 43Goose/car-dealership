@@ -95,7 +95,6 @@ export default function CarShowcase() {
         if (action.type === 'add') {
             tempFilter[action.category].push(action.value);
         } else if (action.type === 'remove') {
-            console.log(action.category);
             tempFilter[action.category] = tempFilter[action.category].filter((val: any) => val != action.value);
         } else if (action.type === 'slider') {
             tempFilter[action.category] = action.value;

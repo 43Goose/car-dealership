@@ -87,6 +87,7 @@ function SelectFilter({ title, options, filter, setFilter }: { title: string; op
 
 function SliderFilter({ title, min, max, setFilter }: { title: string; min: number; max: number; setFilter: Function }) {
     const [value, setvalue] = useState([0, 100]);
+    const [numValues, setNumValues] = useState([min, max]);
 
     const getNumFromSlider = (sliderValue: number) => Math.floor(min + ((max - min) * (sliderValue / 100)));
 
@@ -104,10 +105,12 @@ function SliderFilter({ title, min, max, setFilter }: { title: string; min: numb
         if (isMin) sliderValue = num < min ? getSliderFromNum(min) : getSliderFromNum(num);
         else sliderValue = num > max ? getSliderFromNum(max) : getSliderFromNum(num);
 
-        const newValue = isMin ? [sliderValue, value[1]] : [value[0], sliderValue];
+        const newNumValues = isMin ? [num, numValues[1]] : [numValues[0], num];
+        const newValues = isMin ? [sliderValue, value[1]] : [value[0], sliderValue];
         const newFilter = isMin ? { min: event.currentTarget.value, max: getNumFromSlider(value[1]) } : { min: getNumFromSlider(value[0]), max: event.currentTarget.value }
 
-        setvalue(newValue);
+        setNumValues(newNumValues);
+        setvalue(newValues);
         setFilter({ type: 'slider', category: title, value: newFilter });
     }
 
@@ -120,7 +123,7 @@ function SliderFilter({ title, min, max, setFilter }: { title: string; min: numb
                         size='small'
                         className='max-w-28'
                         type='number'
-                        defaultValue={getNumFromSlider(value[0])}
+                        value={numValues[0]}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleNumberChange(e, true)}
                     />
                     <TextField
@@ -128,7 +131,7 @@ function SliderFilter({ title, min, max, setFilter }: { title: string; min: numb
                         size='small'
                         className='max-w-28'
                         type='number'
-                        defaultValue={getNumFromSlider(value[1])}
+                        value={numValues[1]}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleNumberChange(e, false)}
                     />
                 </div>
