@@ -57,16 +57,17 @@ export default function ImageSlider(
     <div className='relative w-full h-full'>
       <div className='w-full h-full relative'>
         <div
-          className='w-full h-full flex duration-300 ease-in-out overflow-x-scroll snap-x snap-mandatory scroll-smooth motion-reduce:scroll-auto no-scrollbar'
+          className='w-screen h-full flex duration-300 ease-in-out overflow-x-scroll snap-x snap-mandatory scroll-smooth motion-reduce:scroll-auto no-scrollbar'
           ref={carousel}
         >
           {images.map((img, i) => (
-            <Image
-              key={i}
-              src={img.image}
-              alt={img.alt}
-              className='w-full object-cover shrink-0 grow-0 snap-start'
-            ></Image>
+            <div key={i} className='w-screen h-auto snap-start shrink-0 grow-0'>
+              <Image
+                src={img.image}
+                alt={img.alt}
+                className='h-full w-auto object-cover'
+              ></Image>
+            </div>
           ))}
         </div>
         <button className='hidden absolute top-0 bottom-0 p-2 cursor-pointer left-0 md:block' onClick={() => changeImage(-1)}>

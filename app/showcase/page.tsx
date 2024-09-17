@@ -4,7 +4,7 @@ import CarShowcase from '../ui/car-showcase';
 
 export default function Showcase() {
   return (
-    <main className='min-h-screen'>
+    <main className='min-h-dvh'>
       <Suspense>
         <CarShowcase />
       </Suspense>

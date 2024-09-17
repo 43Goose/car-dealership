@@ -32,9 +32,9 @@ export default function Dealership() {
   });
 
   return (
-    <main className='min-h-screen'>
+    <main className='min-h-dvh'>
       <ThemeProvider theme={theme}>
-        <div className='h-screen pt-16'>
+        <div className='h-dvh pt-16'>
           <ImageSlider images={menuImages} previews={false} />
         </div>
         <div className='w-full my-24 px-8 md:px-16'>
