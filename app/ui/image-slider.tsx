@@ -55,17 +55,17 @@ export default function ImageSlider(
 
   return (
     <div className='relative w-full h-full'>
-      <div className='w-full h-full relative'>
+      <div className='rlative w-full h-full'>
         <div
-          className='w-screen h-full flex duration-300 ease-in-out overflow-x-scroll snap-x snap-mandatory scroll-smooth motion-reduce:scroll-auto no-scrollbar'
+          className='w-screen h-full flex items-stretch duration-300 ease-in-out overflow-x-scroll snap-x snap-mandatory scroll-smooth motion-reduce:scroll-auto no-scrollbar'
           ref={carousel}
         >
           {images.map((img, i) => (
-            <div key={i} className='w-screen h-auto max-h-96 snap-start shrink-0 grow-0 overflow-hidden'>
+            <div key={i} className='w-screen snap-start shrink-0 grow-0'>
               <Image
                 src={img.image}
                 alt={img.alt}
-                className='h-full w-auto object-cover'
+                className='h-full w-auto object-cover 2xl:w-full'
               ></Image>
             </div>
           ))}

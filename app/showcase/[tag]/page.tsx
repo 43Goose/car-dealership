@@ -17,7 +17,6 @@ export default function Vehicle({ params }: { params: { tag: string } }) {
 
     const buyNowFunc = async () => {
         'use server';
-
         clearCart();
     }
 
