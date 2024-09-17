@@ -65,7 +65,7 @@ export default function ImageSlider(
               <Image
                 src={img.image}
                 alt={img.alt}
-                className='w-auto h-full object-cover'
+                className='w-full h-full object-cover'
               ></Image>
             </div>
           ))}
