@@ -53,7 +53,7 @@ export default function Dealership() {
             <Button variant='outlined' color='secondary' href='/showcase'>SHOP NOW</Button>
           </div>
         </div>
-        <div className='w-full my-24 px-8 md:px-16'>
+        <div className='w-full my-24 md:px-16'>
           <h1 className='w-full text-center text-3xl text-red-500 font-bold mb-4'>SUPER CARS</h1>
           <h2 className='text-center text-lg'>{"Like speed? These cars have got it."}</h2>
           <ItemCarousel filterFn={(v: vehicle): v is vehicle => { return v.class === 'Super' }} />
