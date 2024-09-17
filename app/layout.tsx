@@ -3,6 +3,12 @@ import "./globalicons.css";
 import { redHat } from "./ui/fonts";
 import DealershipNavbar from "./ui/navbar";
 import Footer from "./ui/footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Dealership",
+    description: "Created by Owen Edwards(Goose).",
+};
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (

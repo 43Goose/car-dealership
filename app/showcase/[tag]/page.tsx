@@ -24,7 +24,7 @@ export default function Vehicle({ params }: { params: { tag: string } }) {
     return (
         <main className='min-h-dvh'>
             <div className='relative pt-16 pb-4 w-full md:flex md:flex-row md:justify-center'>
-                <div className='md:sticky md:top-0 md:pl-4'>
+                <div className='max-h-96 md:sticky md:top-0 md:pl-4'>
                     <div className='h-full md:max-w-xl'>
                         <ItemPath item={vehicle} className='hidden md:block md:pt-8 md:pb-4' />
                         <div className='w-full h-full md:max-h-[1000px] md:overflow-hidden md:border-2 md:border-red-500'>
