@@ -34,7 +34,7 @@ export default function Dealership() {
   return (
     <main className='min-h-dvh'>
       <ThemeProvider theme={theme}>
-        <div className='h-dvh w-screen pt-16 md:h-[calc(100dvh_-_16px)]'> {/* don't know why its oversized on md+ but this fixes it so whatever*/}
+        <div className='h-dvh w-full pt-16'> {/* don't know why its oversized on md+ but this fixes it so whatever*/}
           <ImageSlider images={menuImages} previews={false} />
         </div>
         <div className='w-full my-24 px-8 md:px-16'>
