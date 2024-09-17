@@ -61,7 +61,7 @@ export default function ImageSlider(
           ref={carousel}
         >
           {images.map((img, i) => (
-            <div key={i} className='w-screen h-auto snap-start shrink-0 grow-0'>
+            <div key={i} className='w-screen h-auto max-h-96 snap-start shrink-0 grow-0 overflow-hidden'>
               <Image
                 src={img.image}
                 alt={img.alt}
