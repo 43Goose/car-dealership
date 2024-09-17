@@ -26,7 +26,7 @@ export default function Vehicle({ params }: { params: { tag: string } }) {
                 <div className='max-h-96 md:sticky md:top-0 md:pl-4'>
                     <div className='h-full md:max-w-xl'>
                         <ItemPath item={vehicle} className='hidden md:block md:pt-8 md:pb-4' />
-                        <div className='w-full h-full md:max-h-[1000px] md:overflow-hidden md:border-2 md:border-red-500'>
+                        <div className='w-full h-80 md:max-h-[1000px] md:h-auto md:overflow-hidden md:border-2 md:border-red-500'>
                             <ImageSlider images={vehicle.images} previews />
                         </div>
                     </div>
